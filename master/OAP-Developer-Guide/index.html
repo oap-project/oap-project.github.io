@@ -69,62 +69,6 @@
     </ul>
                     </li>
                 </ul>
-                <p class="caption"><span class="caption-text">SQL DS Cache</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../SQLDSCache/User-Guide/">User Guide</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../SQLDSCache/Advanced-Configuration/">Advanced Configuration</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../SQLDSCache/Developer-Guide/">Developer Guide</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Native SQL Engine</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../NativeSQLEngine/User-Guide/">User Guide</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../NativeSQLEngine/Prerequisite/">Prerequisite</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../NativeSQLEngine/Installation/">Installation</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../NativeSQLEngine/InstallationNotes/">InstallationNotes</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../NativeSQLEngine/Configuration/">Configuration</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../NativeSQLEngine/SparkInstallation/">SparkInstallation</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../NativeSQLEngine/ApacheArrowInstallation/">ApacheArrowInstallation</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Arrow Data Source</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ArrowDataSource/User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">OAP MLlib</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../OAPMLlib/User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">PMem Shuffle</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../PMemShuffle/User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">PMem Spill</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../PMemSpill/User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">PMem Common</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../PMemCommon/User-Guide/">User Guide</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Remote Shuffle</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../RemoteShuffle/User-Guide/">User Guide</a>
-                    </li>
-                </ul>
                 <ul>
                     <li class="toctree-l1"><a class="" href="../../">Version Selector</a>
                     </li>
@@ -165,14 +109,14 @@
 <p>This document contains the instructions &amp; scripts on installing necessary dependencies and building OAP. 
 You can get more detailed information from OAP each module below.</p>
 <ul>
-<li><a href="https://github.com/oap-project/sql-ds-cache/blob/master/docs/Developer-Guide.md">SQL Index and Data Source Cache</a></li>
-<li><a href="https://github.com/oap-project/pmem-common">PMem Common</a></li>
-<li><a href="https://github.com/oap-project/pmem-spill">PMem Spill</a></li>
-<li><a href="https://github.com/oap-project/pmem-shuffle#5-install-dependencies-for-shuffle-remote-pmem-extension">PMem Shuffle</a></li>
-<li><a href="https://github.com/oap-project/remote-shuffle">Remote Shuffle</a></li>
-<li><a href="https://github.com/oap-project/oap-mllib">OAP MLlib</a></li>
-<li><a href="https://github.com/oap-project/arrow-data-source">Arrow Data Source</a></li>
-<li><a href="https://github.com/oap-project/native-sql-engine">Native SQL Engine</a></li>
+<li><a href="https://oap-project.github.io/sql-ds-cache/">SQL DS Cache</a></li>
+<li><a href="https://oap-project.github.io/pmem-common">PMem Common</a></li>
+<li><a href="https://oap-project.github.io/pmem-spill">PMem Spill</a></li>
+<li><a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a></li>
+<li><a href="https://oap-project.github.io/remote-shuffle">Remote Shuffle</a></li>
+<li><a href="https://oap-project.github.io/oap-mllib">OAP MLlib</a></li>
+<li><a href="https://oap-project.github.io/arrow-data-source">Arrow Data Source</a></li>
+<li><a href="https://oap-project.github.io/native-sql-engine">Native SQL Engine</a></li>
 </ul>
 <h2 id="building-oap">Building OAP</h2>
 <h3 id="prerequisites-for-building">Prerequisites for Building</h3>
@@ -180,7 +124,7 @@ You can get more detailed information from OAP each module below.</p>
 <ul>
 <li><a href="https://help.directadmin.com/item.php?id=494">Cmake</a></li>
 <li><a href="https://gcc.gnu.org/wiki/InstallingGCC">GCC &gt; 7</a></li>
-<li><a href="https://github.com/memkind/memkind/tree/v1.10.1-rc2">Memkind</a></li>
+<li><a href="https://github.com/memkind/memkind/tree/v1.10.1">Memkind</a></li>
 <li><a href="https://github.com/pmem/vmemcache">Vmemcache</a></li>
 <li><a href="https://github.com/Intel-bigdata/HPNL">HPNL</a></li>
 <li><a href="https://github.com/pmem/pmdk">PMDK</a>  </li>
@@ -189,10 +133,10 @@ You can get more detailed information from OAP each module below.</p>
 <p><a href="https://github.com/Intel-bigdata/arrow">Arrow</a></p>
 </li>
 <li>
-<p><strong>Requirements for Shuffle Remote PMem Extension</strong><br />
-If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="https://github.com/oap-project/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</p>
+<p><strong>Requirements for Shuffle Remote PMem Extension</strong></p>
 </li>
 </ul>
+<p>If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</p>
 <p>We provide scripts below to help automatically install dependencies above <strong>except RDMA</strong>, need change to <strong>root</strong> account, run:</p>
 <pre><code># git clone -b &lt;version&gt; https://github.com/oap-project/oap-tools.git
 # cd oap-tools
@@ -221,8 +165,6 @@ If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="htt
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../SQLDSCache/User-Guide/" class="btn btn-neutral float-right" title="User Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../OAP-Installation-Guide/" class="btn btn-neutral" title="OAP Installation Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -253,8 +195,6 @@ If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="htt
       
         <span><a href="../OAP-Installation-Guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../SQLDSCache/User-Guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
