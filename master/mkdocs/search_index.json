@@ -1,0 +1,89 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Optimized Analytics Package (OAP) is an open source project to optimize \nApache Spark\n on \ncache\n, \nshuffle\n, \nnative SQL engine\n and \nMLlib\n, driven by Intel and the community.\n\n\nWhy use OAP?\n\n\nApache Spark is powerful and well optimized on many aspects, but still faces some challenges to achieve the higher-level performance.\n\n\n\n\n\n\nThe JVM and row-based computing engine prevents Spark to be fully optimized for Intel hardware, for example AVX/AVX512, GPU\n\n\n\n\n\n\nThe current implementation of key aspects, such as memory management \n shuffle, doesn't consider the latest technology advancements,  like PMEM\n\n\n\n\n\n\nThe batch processing engine cannot satisfy the need of queries with high performance requirement.\n\n\n\n\n\n\nOAP Project is targeted to optimize Spark on these aspects above, now it has 8 components, including \nSQL DS Cache\n,\n\nNative SQL Engine\n, \nArrow Data Source\n, \nOAP MLlib\n, \nPMem Spill\n, \nPMem Common\n, \nPMem Shuffle\n and \nRemote Shuffle\n.\n\n\n\n\nHow to use OAP?\n\n\nGuide\n\n\nPlease refer to the total OAP project installation and developer guide below.\n\n\n\n\nOAP Installation Guide\n\n\nOAP Developer Guide\n\n\n\n\nComponents\n\n\nYou can get more detailed information from each module web page of OAP Project below.\n\n\n\n\nSQL DS Cache\n\n\nNative SQL Engine\n\n\nArrow Data Source\n\n\nOAP MLlib\n\n\nPMem Shuffle\n\n\nRemote Shuffle\n\n\nPMem Spill\n\n\nPMem Common", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/#why-use-oap", 
+            "text": "Apache Spark is powerful and well optimized on many aspects, but still faces some challenges to achieve the higher-level performance.    The JVM and row-based computing engine prevents Spark to be fully optimized for Intel hardware, for example AVX/AVX512, GPU    The current implementation of key aspects, such as memory management   shuffle, doesn't consider the latest technology advancements,  like PMEM    The batch processing engine cannot satisfy the need of queries with high performance requirement.    OAP Project is targeted to optimize Spark on these aspects above, now it has 8 components, including  SQL DS Cache , Native SQL Engine ,  Arrow Data Source ,  OAP MLlib ,  PMem Spill ,  PMem Common ,  PMem Shuffle  and  Remote Shuffle .", 
+            "title": "Why use OAP?"
+        }, 
+        {
+            "location": "/#how-to-use-oap", 
+            "text": "", 
+            "title": "How to use OAP?"
+        }, 
+        {
+            "location": "/#guide", 
+            "text": "Please refer to the total OAP project installation and developer guide below.   OAP Installation Guide  OAP Developer Guide", 
+            "title": "Guide"
+        }, 
+        {
+            "location": "/#components", 
+            "text": "You can get more detailed information from each module web page of OAP Project below.   SQL DS Cache  Native SQL Engine  Arrow Data Source  OAP MLlib  PMem Shuffle  Remote Shuffle  PMem Spill  PMem Common", 
+            "title": "Components"
+        }, 
+        {
+            "location": "/OAP-Installation-Guide/", 
+            "text": "OAP Installation Guide\n\n\nThis document introduces how to install OAP and its dependencies on your cluster nodes by \nConda\n. \nFollow steps below on \nevery node\n of your cluster to set right environment for each machine.\n\n\nContents\n\n\n\n\nPrerequisites\n\n\nInstalling OAP\n\n\nConfiguration\n\n\n\n\nPrerequisites\n\n\n\n\n\n\nOS Requirements\n\nWe have tested OAP on Fedora 29 and CentOS 7.6 (kernel-4.18.16). We recommend you use \nFedora 29 CentOS 7.6 or above\n. Besides, for \nMemkind\n we recommend you use \nkernel above 3.10\n.\n\n\n\n\n\n\nConda Requirements\n \n\nInstall Conda on your cluster nodes with below commands and follow the prompts on the installer screens.:\n\n\n\n\n\n\n$ wget -c https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh\n$ chmod +x Miniconda2-latest-Linux-x86_64.sh \n$ bash Miniconda2-latest-Linux-x86_64.sh \n\n\n\n\nFor changes to take effect, close and re-open your current shell. To test your installation,  run the command \nconda list\n in your terminal window. A list of installed packages appears if it has been installed correctly.\n\n\nInstalling OAP\n\n\nDependencies below are required by OAP and all of them are included in OAP Conda package, they will be automatically installed in your cluster when you Conda install OAP. Ensure you have activated environment which you created in the previous steps.\n\n\n\n\nArrow\n\n\nPlasma\n\n\nMemkind\n\n\nVmemcache\n\n\nHPNL\n\n\nPMDK\n  \n\n\nOneAPI\n\n\n\n\nCreate a conda environment and install OAP Conda package.\n\n\n$ conda create -n oapenv -y python=3.7\n$ conda activate oapenv\n$ conda install -c conda-forge -c intel -y oap=1.0.0\n\n\n\n\nOnce finished steps above, you have completed OAP dependencies installation and OAP building, and will find built OAP jars under \n$HOME/miniconda2/envs/oapenv/oap_jars\n\n\nExtra Steps for PMem Shuffle\n\n\nIf you use one of OAP features -- \nPMem Shuffle\n with \nRDMA\n, you need to configure and validate RDMA, please refer to \nPMem Shuffle\n for the details.\n\n\nConfiguration\n\n\nOnce finished steps above, make sure libraries installed by Conda can be linked by Spark, please add the following configuration settings to \n$SPARK_HOME/conf/spark-defaults.conf\n.\n\n\nspark.executorEnv.LD_LIBRARY_PATH   $HOME/miniconda2/envs/oapenv/lib\nspark.executor.extraLibraryPath     $HOME/miniconda2/envs/oapenv/lib\nspark.driver.extraLibraryPath       $HOME/miniconda2/envs/oapenv/lib\nspark.executor.extraClassPath       $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar\nspark.driver.extraClassPath         $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar\n\n\n\n\nAnd then you can follow the corresponding feature documents for more details to use them.", 
+            "title": "OAP Installation Guide"
+        }, 
+        {
+            "location": "/OAP-Installation-Guide/#oap-installation-guide", 
+            "text": "This document introduces how to install OAP and its dependencies on your cluster nodes by  Conda . \nFollow steps below on  every node  of your cluster to set right environment for each machine.", 
+            "title": "OAP Installation Guide"
+        }, 
+        {
+            "location": "/OAP-Installation-Guide/#contents", 
+            "text": "Prerequisites  Installing OAP  Configuration", 
+            "title": "Contents"
+        }, 
+        {
+            "location": "/OAP-Installation-Guide/#prerequisites", 
+            "text": "OS Requirements \nWe have tested OAP on Fedora 29 and CentOS 7.6 (kernel-4.18.16). We recommend you use  Fedora 29 CentOS 7.6 or above . Besides, for  Memkind  we recommend you use  kernel above 3.10 .    Conda Requirements   \nInstall Conda on your cluster nodes with below commands and follow the prompts on the installer screens.:    $ wget -c https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh\n$ chmod +x Miniconda2-latest-Linux-x86_64.sh \n$ bash Miniconda2-latest-Linux-x86_64.sh   For changes to take effect, close and re-open your current shell. To test your installation,  run the command  conda list  in your terminal window. A list of installed packages appears if it has been installed correctly.", 
+            "title": "Prerequisites"
+        }, 
+        {
+            "location": "/OAP-Installation-Guide/#installing-oap", 
+            "text": "Dependencies below are required by OAP and all of them are included in OAP Conda package, they will be automatically installed in your cluster when you Conda install OAP. Ensure you have activated environment which you created in the previous steps.   Arrow  Plasma  Memkind  Vmemcache  HPNL  PMDK     OneAPI   Create a conda environment and install OAP Conda package.  $ conda create -n oapenv -y python=3.7\n$ conda activate oapenv\n$ conda install -c conda-forge -c intel -y oap=1.0.0  Once finished steps above, you have completed OAP dependencies installation and OAP building, and will find built OAP jars under  $HOME/miniconda2/envs/oapenv/oap_jars", 
+            "title": "Installing OAP"
+        }, 
+        {
+            "location": "/OAP-Installation-Guide/#extra-steps-for-pmem-shuffle", 
+            "text": "If you use one of OAP features --  PMem Shuffle  with  RDMA , you need to configure and validate RDMA, please refer to  PMem Shuffle  for the details.", 
+            "title": "Extra Steps for PMem Shuffle"
+        }, 
+        {
+            "location": "/OAP-Installation-Guide/#configuration", 
+            "text": "Once finished steps above, make sure libraries installed by Conda can be linked by Spark, please add the following configuration settings to  $SPARK_HOME/conf/spark-defaults.conf .  spark.executorEnv.LD_LIBRARY_PATH   $HOME/miniconda2/envs/oapenv/lib\nspark.executor.extraLibraryPath     $HOME/miniconda2/envs/oapenv/lib\nspark.driver.extraLibraryPath       $HOME/miniconda2/envs/oapenv/lib\nspark.executor.extraClassPath       $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar\nspark.driver.extraClassPath         $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar  And then you can follow the corresponding feature documents for more details to use them.", 
+            "title": "Configuration"
+        }, 
+        {
+            "location": "/OAP-Developer-Guide/", 
+            "text": "OAP Developer Guide\n\n\nThis document contains the instructions \n scripts on installing necessary dependencies and building OAP. \nYou can get more detailed information from OAP each module below.\n\n\n\n\nSQL DS Cache\n\n\nPMem Common\n\n\nPMem Spill\n\n\nPMem Shuffle\n\n\nRemote Shuffle\n\n\nOAP MLlib\n\n\nArrow Data Source\n\n\nNative SQL Engine\n\n\n\n\nBuilding OAP\n\n\nPrerequisites for Building\n\n\nOAP is built with \nApache Maven\n and Oracle Java 8, and mainly required tools to install on your cluster are listed below.\n\n\n\n\nCmake\n\n\nGCC \n 7\n\n\nMemkind\n\n\nVmemcache\n\n\nHPNL\n\n\nPMDK\n  \n\n\nOneAPI\n\n\n\n\nArrow\n\n\n\n\n\n\nRequirements for PMem Shuffle\n\n\n\n\n\n\nIf enable PMem Shuffle with RDMA, you can refer to \nPMem Shuffle\n to configure and validate RDMA in advance.\n\n\nWe provide scripts below to help automatically install dependencies above \nexcept RDMA\n, need change to \nroot\n account, run:\n\n\n# git clone -b \nversion\n https://github.com/oap-project/oap-tools.git\n# cd oap-tools\n# sh dev/install-compile-time-dependencies.sh\n\n\n\n\nRun the following command to learn more.\n\n\n# sh dev/scripts/prepare_oap_env.sh --help\n\n\n\n\nRun the following command to automatically install specific dependency such as Maven.\n\n\n# sh dev/scripts/prepare_oap_env.sh --prepare_maven\n\n\n\n\nBuilding\n\n\nTo build OAP package, run command below then you can find a tarball named \noap-$VERSION-bin-spark-$VERSION.tar.gz\n under directory \n$OAP_TOOLS_HOME/dev/release-package\n.\n\n\n$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh\n\n\n\n\nBuilding Specified OAP Module, such as \nsql-ds-cache\n, run:\n\n\n$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh --sql-ds-cache", 
+            "title": "OAP Developer Guide"
+        }, 
+        {
+            "location": "/OAP-Developer-Guide/#oap-developer-guide", 
+            "text": "This document contains the instructions   scripts on installing necessary dependencies and building OAP. \nYou can get more detailed information from OAP each module below.   SQL DS Cache  PMem Common  PMem Spill  PMem Shuffle  Remote Shuffle  OAP MLlib  Arrow Data Source  Native SQL Engine", 
+            "title": "OAP Developer Guide"
+        }, 
+        {
+            "location": "/OAP-Developer-Guide/#building-oap", 
+            "text": "", 
+            "title": "Building OAP"
+        }, 
+        {
+            "location": "/OAP-Developer-Guide/#prerequisites-for-building", 
+            "text": "OAP is built with  Apache Maven  and Oracle Java 8, and mainly required tools to install on your cluster are listed below.   Cmake  GCC   7  Memkind  Vmemcache  HPNL  PMDK     OneAPI   Arrow    Requirements for PMem Shuffle    If enable PMem Shuffle with RDMA, you can refer to  PMem Shuffle  to configure and validate RDMA in advance.  We provide scripts below to help automatically install dependencies above  except RDMA , need change to  root  account, run:  # git clone -b  version  https://github.com/oap-project/oap-tools.git\n# cd oap-tools\n# sh dev/install-compile-time-dependencies.sh  Run the following command to learn more.  # sh dev/scripts/prepare_oap_env.sh --help  Run the following command to automatically install specific dependency such as Maven.  # sh dev/scripts/prepare_oap_env.sh --prepare_maven", 
+            "title": "Prerequisites for Building"
+        }, 
+        {
+            "location": "/OAP-Developer-Guide/#building", 
+            "text": "To build OAP package, run command below then you can find a tarball named  oap-$VERSION-bin-spark-$VERSION.tar.gz  under directory  $OAP_TOOLS_HOME/dev/release-package .  $ sh $OAP_TOOLS_HOME/dev/compile-oap.sh  Building Specified OAP Module, such as  sql-ds-cache , run:  $ sh $OAP_TOOLS_HOME/dev/compile-oap.sh --sql-ds-cache", 
+            "title": "Building"
+        }
+    ]
+}
