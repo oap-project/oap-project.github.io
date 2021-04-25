@@ -1,83 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>OAP Developer Guide - OAP Project</title>
-    <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
-    <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
-    <link href="/css/base.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/highlight.css">
-    <link href="../extra.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>OAP Developer Guide - OAP Project</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/bootstrap-3.3.7.min.js"></script>
-    <script src="/js/highlight.pack.js"></script>
-    
-    <base target="_top">
-    <script>
-      var base_url = '..';
-      var is_top_frame = false;
-        
-        var pageToc = [
-          {title: "OAP Developer Guide", url: "#oap-developer-guide", children: [
-              {title: "Building OAP", url: "#building-oap" },
-          ]},
-        ];
-
-    </script>
-    <script src="/js/base.js"></script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-125166209-1', 'oap-project.github.io');
-        ga('send', 'pageview');
-    </script> 
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "OAP Developer Guide";
+    var mkdocs_page_input_path = "OAP-Developer-Guide.md";
+    var mkdocs_page_url = "/OAP-Developer-Guide/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
 </head>
 
-<body>
-<script>
-if (is_top_frame) { $('body').addClass('wm-top-page'); }
-</script>
+<body class="wy-body-for-nav" role="document">
 
+  <div class="wy-grid-for-nav">
 
-
-<div class="container-fluid wm-page-content">
     
-    <h1><strong>OAP Developer Guide</strong></h1>
-    <hr>
-    <h1 id="oap-developer-guide">OAP Developer Guide</h1>
-<p>This document contains the instructions &amp; scripts on installing necessary dependencies and building OAP. 
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> OAP Project</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">OAP Developer Guide</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#building-oap">Building OAP</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#prerequisites">Prerequisites</a></li>
+        
+            <li><a class="toctree-l3" href="#building">Building</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../OAP-Installation-Guide/">OAP Installation Guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../README/">README</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">OAP Project</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>OAP Developer Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/oap-project/oap-project.github.io.git/"> Edit on Fork on GitHub </a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>This document contains the instructions &amp; scripts on installing necessary dependencies and building OAP modules. 
 You can get more detailed information from OAP each module below.</p>
 <ul>
-<li><a href="https://oap-project.github.io/sql-ds-cache/">SQL DS Cache</a></li>
-<li><a href="https://oap-project.github.io/pmem-common">PMem Common</a></li>
-<li><a href="https://oap-project.github.io/pmem-spill">PMem Spill</a></li>
-<li><a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a></li>
-<li><a href="https://oap-project.github.io/remote-shuffle">Remote Shuffle</a></li>
-<li><a href="https://oap-project.github.io/oap-mllib">OAP MLlib</a></li>
-<li><a href="https://oap-project.github.io/arrow-data-source">Arrow Data Source</a></li>
-<li><a href="https://oap-project.github.io/native-sql-engine">Native SQL Engine</a></li>
+<li><a href="https://github.com/oap-project/sql-ds-cache/blob/v1.1.0-spark-3.0.0/docs/Developer-Guide.md">SQL Index and Data Source Cache</a></li>
+<li><a href="https://github.com/oap-project/pmem-common/tree/v1.1.0-spark-3.0.0">PMem Common</a></li>
+<li><a href="https://github.com/oap-project/pmem-spill/tree/v1.1.0-spark-3.0.0">PMem Spill</a></li>
+<li><a href="https://github.com/oap-project/pmem-shuffle/tree/v1.1.0-spark-3.0.0#5-install-dependencies-for-pmem-shuffle">PMem Shuffle</a></li>
+<li><a href="https://github.com/oap-project/remote-shuffle/tree/v1.1.0-spark-3.0.0">Remote Shuffle</a></li>
+<li><a href="https://github.com/oap-project/oap-mllib/tree/v1.1.0-spark-3.0.0">OAP MLlib</a></li>
+<li><a href="https://github.com/oap-project/native-sql-engine/tree/v1.1.0-spark-3.0.0">Native SQL Engine</a></li>
 </ul>
 <h2 id="building-oap">Building OAP</h2>
-<h3 id="prerequisites-for-building">Prerequisites for Building</h3>
-<p>OAP is built with <a href="http://maven.apache.org/">Apache Maven</a> and Oracle Java 8, and mainly required tools to install on your cluster are listed below.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>We provide scripts to help automatically install dependencies required, please change to <strong>root</strong> user and run:</p>
+<pre><code># git clone -b branch-1.1-spark-3.x https://github.com/oap-project/oap-tools.git
+# cd oap-tools
+# sh dev/install-compile-time-dependencies.sh
+</code></pre>
+
+<p><em>Note</em>: <code>branch-1.1-spark-3.x</code> is for OAP modules version <code>v1.1.0-spark-3.0.0</code></p>
+<p>Then the dependencies below will be installed:</p>
 <ul>
 <li><a href="https://help.directadmin.com/item.php?id=494">Cmake</a></li>
 <li><a href="https://gcc.gnu.org/wiki/InstallingGCC">GCC &gt; 7</a></li>
@@ -86,20 +144,9 @@ You can get more detailed information from OAP each module below.</p>
 <li><a href="https://github.com/Intel-bigdata/HPNL">HPNL</a></li>
 <li><a href="https://github.com/pmem/pmdk">PMDK</a>  </li>
 <li><a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi.html">OneAPI</a></li>
-<li>
-<p><a href="https://github.com/Intel-bigdata/arrow">Arrow</a></p>
-</li>
-<li>
-<p><strong>Requirements for PMem Shuffle</strong></p>
-</li>
+<li><a href="https://github.com/oap-project/arrow/tree/arrow-3.0.0-oap-1.1">Arrow</a></li>
+<li><a href="https://llvm.org/">LLVM</a> </li>
 </ul>
-<p>If enable PMem Shuffle with RDMA, you can refer to <a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</p>
-<p>We provide scripts below to help automatically install dependencies above <strong>except RDMA</strong>, need change to <strong>root</strong> account, run:</p>
-<pre><code># git clone -b &lt;version&gt; https://github.com/oap-project/oap-tools.git
-# cd oap-tools
-# sh dev/install-compile-time-dependencies.sh
-</code></pre>
-
 <p>Run the following command to learn more.</p>
 <pre><code># sh dev/scripts/prepare_oap_env.sh --help
 </code></pre>
@@ -108,21 +155,63 @@ You can get more detailed information from OAP each module below.</p>
 <pre><code># sh dev/scripts/prepare_oap_env.sh --prepare_maven
 </code></pre>
 
+<ul>
+<li><strong>Requirements for Shuffle Remote PMem Extension</strong><br />
+If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="https://github.com/oap-project/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</li>
+</ul>
 <h3 id="building">Building</h3>
+<p>OAP is built with <a href="http://maven.apache.org/">Apache Maven</a> and Oracle Java 8.</p>
 <p>To build OAP package, run command below then you can find a tarball named <code>oap-$VERSION-bin-spark-$VERSION.tar.gz</code> under directory <code>$OAP_TOOLS_HOME/dev/release-package</code>.</p>
 <pre><code>$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh
 </code></pre>
 
-<p>Building Specified OAP Module, such as <code>sql-ds-cache</code>, run:</p>
+<p>Building specified OAP Module, such as <code>sql-ds-cache</code>, run:</p>
 <pre><code>$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh --sql-ds-cache
 </code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../OAP-Installation-Guide/" class="btn btn-neutral float-right" title="OAP Installation Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <br>
-</div>
+  <hr/>
 
-<footer class="col-md-12 wm-page-content">
-  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../OAP-Installation-Guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
 
 </body>
 </html>
