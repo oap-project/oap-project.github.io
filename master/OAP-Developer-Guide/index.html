@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>OAP Developer Guide - OAP Project</title>
+    <title>OAP Developer Guide - OAP</title>
     <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="/css/base.css" rel="stylesheet">
@@ -63,21 +63,27 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     <h1><strong>OAP Developer Guide</strong></h1>
     <hr>
     <h1 id="oap-developer-guide">OAP Developer Guide</h1>
-<p>This document contains the instructions &amp; scripts on installing necessary dependencies and building OAP. 
+<p>This document contains the instructions &amp; scripts on installing necessary dependencies and building OAP modules. 
 You can get more detailed information from OAP each module below.</p>
 <ul>
-<li><a href="https://oap-project.github.io/sql-ds-cache/">SQL DS Cache</a></li>
-<li><a href="https://oap-project.github.io/pmem-common">PMem Common</a></li>
-<li><a href="https://oap-project.github.io/pmem-spill">PMem Spill</a></li>
-<li><a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a></li>
-<li><a href="https://oap-project.github.io/remote-shuffle">Remote Shuffle</a></li>
-<li><a href="https://oap-project.github.io/oap-mllib">OAP MLlib</a></li>
-<li><a href="https://oap-project.github.io/arrow-data-source">Arrow Data Source</a></li>
-<li><a href="https://oap-project.github.io/native-sql-engine">Native SQL Engine</a></li>
+<li><a href="https://github.com/oap-project/sql-ds-cache/blob/master/docs/Developer-Guide.md">SQL Index and Data Source Cache</a></li>
+<li><a href="https://github.com/oap-project/pmem-common">PMem Common</a></li>
+<li><a href="https://github.com/oap-project/pmem-spill">PMem Spill</a></li>
+<li><a href="https://github.com/oap-project/pmem-shuffle#5-install-dependencies-for-pmem-shuffle">PMem Shuffle</a></li>
+<li><a href="https://github.com/oap-project/remote-shuffle">Remote Shuffle</a></li>
+<li><a href="https://github.com/oap-project/oap-mllib">OAP MLlib</a></li>
+<li><a href="https://github.com/oap-project/native-sql-engine">Native SQL Engine</a></li>
 </ul>
 <h2 id="building-oap">Building OAP</h2>
-<h3 id="prerequisites-for-building">Prerequisites for Building</h3>
-<p>OAP is built with <a href="http://maven.apache.org/">Apache Maven</a> and Oracle Java 8, and mainly required tools to install on your cluster are listed below.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>We provide scripts to help automatically install dependencies required, please change to <strong>root</strong> user and run:</p>
+<pre><code># git clone -b branch-1.1-spark-3.x https://github.com/oap-project/oap-tools.git
+# cd oap-tools
+# sh dev/install-compile-time-dependencies.sh
+</code></pre>
+
+<p><em>Note</em>: <code>branch-1.1-spark-3.x</code> is for OAP modules version <code>v1.1.0-spark-3.0.0</code></p>
+<p>Then the dependencies below will be installed:</p>
 <ul>
 <li><a href="https://help.directadmin.com/item.php?id=494">Cmake</a></li>
 <li><a href="https://gcc.gnu.org/wiki/InstallingGCC">GCC &gt; 7</a></li>
@@ -86,20 +92,9 @@ You can get more detailed information from OAP each module below.</p>
 <li><a href="https://github.com/Intel-bigdata/HPNL">HPNL</a></li>
 <li><a href="https://github.com/pmem/pmdk">PMDK</a>  </li>
 <li><a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi.html">OneAPI</a></li>
-<li>
-<p><a href="https://github.com/Intel-bigdata/arrow">Arrow</a></p>
-</li>
-<li>
-<p><strong>Requirements for PMem Shuffle</strong></p>
-</li>
+<li><a href="https://github.com/oap-project/arrow/tree/arrow-3.0.0-oap-1.1">Arrow</a></li>
+<li><a href="https://llvm.org/">LLVM</a> </li>
 </ul>
-<p>If enable PMem Shuffle with RDMA, you can refer to <a href="https://oap-project.github.io/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</p>
-<p>We provide scripts below to help automatically install dependencies above <strong>except RDMA</strong>, need change to <strong>root</strong> account, run:</p>
-<pre><code># git clone -b &lt;version&gt; https://github.com/oap-project/oap-tools.git
-# cd oap-tools
-# sh dev/install-compile-time-dependencies.sh
-</code></pre>
-
 <p>Run the following command to learn more.</p>
 <pre><code># sh dev/scripts/prepare_oap_env.sh --help
 </code></pre>
@@ -108,12 +103,17 @@ You can get more detailed information from OAP each module below.</p>
 <pre><code># sh dev/scripts/prepare_oap_env.sh --prepare_maven
 </code></pre>
 
+<ul>
+<li><strong>Requirements for Shuffle Remote PMem Extension</strong><br />
+If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="https://github.com/oap-project/pmem-shuffle">PMem Shuffle</a> to configure and validate RDMA in advance.</li>
+</ul>
 <h3 id="building">Building</h3>
+<p>OAP is built with <a href="http://maven.apache.org/">Apache Maven</a> and Oracle Java 8.</p>
 <p>To build OAP package, run command below then you can find a tarball named <code>oap-$VERSION-bin-spark-$VERSION.tar.gz</code> under directory <code>$OAP_TOOLS_HOME/dev/release-package</code>.</p>
 <pre><code>$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh
 </code></pre>
 
-<p>Building Specified OAP Module, such as <code>sql-ds-cache</code>, run:</p>
+<p>Building specified OAP Module, such as <code>sql-ds-cache</code>, run:</p>
 <pre><code>$ sh $OAP_TOOLS_HOME/dev/compile-oap.sh --sql-ds-cache
 </code></pre>
 
