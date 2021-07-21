@@ -28,7 +28,7 @@
         {
             "location": "/OAP-Installation-Guide/", 
             "text": "This document introduces how to install OAP and its dependencies on your cluster nodes by \nConda\n. \nFollow steps below on \nevery node\n of your cluster to set right environment for each machine.\n\n\nContents\n\n\n\n\nPrerequisites\n\n\nInstalling OAP\n\n\nConfiguration\n\n\n\n\nPrerequisites\n\n\n\n\n\n\nOS Requirements\n\nWe have tested OAP on Fedora 29 and CentOS 7.6 (kernel-4.18.16). We recommend you use \nFedora 29 CentOS 7.6 or above\n. Besides, for \nMemkind\n we recommend you use \nkernel above 3.10\n.\n\n\n\n\n\n\nConda Requirements\n \n\nInstall Conda on your cluster nodes with below commands and follow the prompts on the installer screens.:\n\n\n\n\n\n\n$ wget -c https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh\n$ chmod +x Miniconda2-latest-Linux-x86_64.sh \n$ bash Miniconda2-latest-Linux-x86_64.sh \n\n\n\n\nFor changes to take effect, \nclose and re-open\n your current shell. \nTo test your installation,  run the command \nconda list\n in your terminal window. A list of installed packages appears if it has been installed correctly.\n\n\nInstalling OAP\n\n\nCreate a Conda environment and install OAP Conda package.\n\n\n$ conda create -n oapenv -y python=3.7\n$ conda activate oapenv\n$ conda install -c conda-forge -c intel -y oap=1.1.1\n\n\n\n\nOnce finished steps above, you have completed OAP dependencies installation and OAP building, and will find built OAP jars under \n$HOME/miniconda2/envs/oapenv/oap_jars\n\n\nDependencies below are required by OAP and all of them are included in OAP Conda package, they will be automatically installed in your cluster when you Conda install OAP. Ensure you have activated environment which you created in the previous steps.\n\n\n\n\nArrow\n\n\nPlasma\n\n\nMemkind\n\n\nVmemcache\n\n\nHPNL\n\n\nPMDK\n  \n\n\nOneAPI\n\n\n\n\nExtra Steps for Shuffle Remote PMem Extension\n\n\nIf you use one of OAP features -- \nPMem Shuffle\n with \nRDMA\n, you need to configure and validate RDMA, please refer to \nPMem Shuffle\n for the details.\n\n\nConfiguration\n\n\nOnce finished steps above, make sure libraries installed by Conda can be linked by Spark, please add the following configuration settings to \n$SPARK_HOME/conf/spark-defaults.conf\n.\n\n\nspark.executorEnv.LD_LIBRARY_PATH   $HOME/miniconda2/envs/oapenv/lib\nspark.executor.extraLibraryPath     $HOME/miniconda2/envs/oapenv/lib\nspark.driver.extraLibraryPath       $HOME/miniconda2/envs/oapenv/lib\nspark.executor.extraClassPath       $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar\nspark.driver.extraClassPath         $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar\n\n\n\n\nThen you can follow the corresponding feature documents for more details to use them.", 
-            "title": "OAP Installation Guide"
+            "title": "Installation Guide"
         }, 
         {
             "location": "/OAP-Installation-Guide/#contents", 
@@ -57,8 +57,8 @@
         }, 
         {
             "location": "/OAP-Developer-Guide/", 
-            "text": "This document contains the instructions \n scripts on installing necessary dependencies and building OAP modules. \nYou can get more detailed information from OAP each module below.\n\n\n\n\nSQL Index and Data Source Cache\n\n\nPMem Common\n\n\nPMem Spill\n\n\nPMem Shuffle\n\n\nRemote Shuffle\n\n\nOAP MLlib\n\n\nNative SQL Engine\n\n\n\n\nBuilding OAP\n\n\nPrerequisites\n\n\nWe provide scripts to help automatically install dependencies required, please change to \nroot\n user and run:\n\n\n# git clone -b \ntag-version\n https://github.com/oap-project/oap-tools.git\n# cd oap-tools\n# sh dev/install-compile-time-dependencies.sh\n\n\n\n\nNote\n: oap-tools tag version \nv1.1.1-spark-3.1.1\n corresponds to  all OAP modules' tag version \nv1.1.1-spark-3.1.1\n.\n\n\nThen the dependencies below will be installed:\n\n\n\n\nCmake\n\n\nGCC \n 7\n\n\nMemkind\n\n\nVmemcache\n\n\nHPNL\n\n\nPMDK\n  \n\n\nOneAPI\n\n\nArrow\n\n\n\n\nLLVM\n \n\n\n\n\n\n\nRequirements for Shuffle Remote PMem Extension\n\nIf enable Shuffle Remote PMem extension with RDMA, you can refer to \nPMem Shuffle\n to configure and validate RDMA in advance.\n\n\n\n\n\n\nBuilding\n\n\nBuilding OAP\n\n\nOAP is built with \nApache Maven\n and Oracle Java 8.\n\n\nTo build OAP package, run command below then you can find a tarball named \noap-$VERSION-bin-spark-$VERSION.tar.gz\n under directory \noap-tools/dev/release-package\n, which contains all OAP module jars.\nChange to \nroot\n user, run\n\n\n# cd oap-tools\n# sh dev/compile-oap.sh\n\n\n\n\nBuilding OAP specific module\n\n\nIf you just want to build a specific OAP Module, such as \nsql-ds-cache\n, change to \nroot\n user, then run:\n\n\n# cd oap-tools\n# sh dev/compile-oap.sh --sql-ds-cache", 
-            "title": "OAP Developer Guide"
+            "text": "This document contains the instructions \n scripts on installing necessary dependencies and building OAP modules. \nYou can get more detailed information from OAP each module below.\n\n\n\n\nSQL Index and Data Source Cache\n\n\nPMem Common\n\n\nPMem Spill\n\n\nPMem Shuffle\n\n\nRemote Shuffle\n\n\nOAP MLlib\n\n\nNative SQL Engine\n\n\n\n\nBuilding OAP\n\n\nPrerequisites\n\n\nWe provide scripts to help automatically install dependencies required, please change to \nroot\n user and run:\n\n\n# git clone -b \ntag-version\n https://github.com/oap-project/oap-tools.git\n# cd oap-tools\n# sh dev/install-compile-time-dependencies.sh\n\n\n\n\nNote\n: oap-tools tag version \nv1.1.1-spark-3.1.1\n corresponds to  all OAP modules' tag version \nv1.1.1-spark-3.1.1\n.\n\n\nThen the dependencies below will be installed:\n\n\n\n\nCmake\n\n\nGCC \n 7\n\n\nMemkind\n\n\nVmemcache\n\n\nHPNL\n\n\nPMDK\n  \n\n\nOneAPI\n\n\nArrow\n\n\n\n\nLLVM\n \n\n\n\n\n\n\nRequirements for Shuffle Remote PMem Extension\n\nIf enable Shuffle Remote PMem extension with RDMA, you can refer to \nPMem Shuffle\n to configure and validate RDMA in advance.\n\n\n\n\n\n\nBuilding\n\n\nBuilding OAP\n\n\nOAP is built with \nApache Maven\n and Oracle Java 8.\n\n\nTo build OAP package, run command below then you can find a tarball named \noap-$VERSION-bin-spark-$VERSION.tar.gz\n under directory \n$OAP_TOOLS_HOME/dev/release-package\n, which contains all OAP module jars.\nChange to \nroot\n user, run\n\n\n# cd oap-tools\n# sh dev/compile-oap.sh\n\n\n\n\nBuilding OAP specific module\n\n\nIf you just want to build a specific OAP Module, such as \nsql-ds-cache\n, change to \nroot\n user, then run:\n\n\n# cd oap-tools\n# sh dev/compile-oap.sh --sql-ds-cache", 
+            "title": "Developer Guide"
         }, 
         {
             "location": "/OAP-Developer-Guide/#building-oap", 
@@ -77,7 +77,7 @@
         }, 
         {
             "location": "/OAP-Developer-Guide/#building-oap_1", 
-            "text": "OAP is built with  Apache Maven  and Oracle Java 8.  To build OAP package, run command below then you can find a tarball named  oap-$VERSION-bin-spark-$VERSION.tar.gz  under directory  oap-tools/dev/release-package , which contains all OAP module jars.\nChange to  root  user, run  # cd oap-tools\n# sh dev/compile-oap.sh", 
+            "text": "OAP is built with  Apache Maven  and Oracle Java 8.  To build OAP package, run command below then you can find a tarball named  oap-$VERSION-bin-spark-$VERSION.tar.gz  under directory  $OAP_TOOLS_HOME/dev/release-package , which contains all OAP module jars.\nChange to  root  user, run  # cd oap-tools\n# sh dev/compile-oap.sh", 
             "title": "Building OAP"
         }, 
         {
@@ -88,7 +88,7 @@
         {
             "location": "/OAP-Release-Cadence/", 
             "text": "Starting with OAP 1.1.0, the OAP project will follow the semantic versioning guidelines with a few deviations. These small differences account for OAP\u2019s nature as a multi-module project.\n\n\nOAP Versions\n\n\nEach OAP release will be versioned: [MAJOR].[FEATURE].[MAINTENANCE]\n\n\nRelease Cadence\n\n\nIn general, major feature releases occur about every 4 months. Hence, OAP would generally be released about 4 months after 1.1.0. Maintenance releases happen as needed in between feature releases. Major releases do not happen according to a fixed schedule.\n\n\nOAP 1.2 Release Window\n\n\n\n\n\n\n\n\nDate\n\n\nEvent\n\n\n\n\n\n\n\n\n\n\nJuly       2021\n\n\nCode freeze. Release branch cut.\n\n\n\n\n\n\nMid August 2021\n\n\nQA period. Focus on bug fixes, tests, stability and docs. Generally, no new features merged.\n\n\n\n\n\n\nAugust     2021\n\n\nRelease candidates (RC), etc. until final release passes\n\n\n\n\n\n\n\n\nMaintenance Releases\n\n\nFeature release branches will, generally, be maintained with bug fix releases for a period of several months.", 
-            "title": "OAP Release Cadence"
+            "title": "Release Cadence"
         }, 
         {
             "location": "/OAP-Release-Cadence/#oap-versions", 
@@ -109,6 +109,16 @@
             "location": "/OAP-Release-Cadence/#maintenance-releases", 
             "text": "Feature release branches will, generally, be maintained with bug fix releases for a period of several months.", 
             "title": "Maintenance Releases"
+        }, 
+        {
+            "location": "/Presentations/", 
+            "text": "Talks:\n\n\n\n\nSpark Native SQL Engine\n, May 2021\n\n\nBuilding a SIMD Supported Vectorized Native Engine for Spark SQL, \nSpark Data + AI Summit\n, November 2020\n\n\nOAP - SQL Index \n Data Source Cache\n, August 2020\n\n\nAccelerate Your Spark Using Intel Optane DC Persistent Memory\n, November 2018\n\n\nOAP: Optimized Analytics Package for Spark Platform, \nSpark Summit\n, October 2017\n\n\n\n\nIntel Website:\n\n\n\n\nOptimized Analytics Package for Spark\n Platform (OAP for Spark\n Platform)", 
+            "title": "Presentations"
+        }, 
+        {
+            "location": "/Powered-by/", 
+            "text": "Alibaba Cloud\n\n\n\n\nTIANCHI Competition - E-MapReduce Geek Challenge\n\n\n\n\nBaidu\n\n\n\n\nBaidu BigSQL Delivers Faster Spark Interactive Queries with OAP \n Intel\u00ae Optane\u2122 Persistent Memory\n\n\n\n\nBONC\n\n\n\n\nA Big Data Platform Solution Based on BONC Enterprise Edition Hadoop and Intel\u00ae Optane\u2122 Persistent Memory\n\n\n\n\nInspur\n\n\n\n\nPlanned\n\n\n\n\nLenovo\n\n\n\n\nPCR review now", 
+            "title": "Powered By"
         }
     ]
 }

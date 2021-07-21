@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>OAP Developer Guide - OAP</title>
+    <title>Developer Guide - OAP</title>
     <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="/css/base.css" rel="stylesheet">
@@ -61,7 +61,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <div class="container-fluid wm-page-content">
     
-    <h1><strong>OAP Developer Guide</strong></h1>
+    <h1><strong>Developer Guide</strong></h1>
     <hr>
     <p>This document contains the instructions &amp; scripts on installing necessary dependencies and building OAP modules. 
 You can get more detailed information from OAP each module below.</p>
@@ -104,7 +104,7 @@ If enable Shuffle Remote PMem extension with RDMA, you can refer to <a href="htt
 <h3 id="building">Building</h3>
 <h4 id="building-oap_1">Building OAP</h4>
 <p>OAP is built with <a href="http://maven.apache.org/">Apache Maven</a> and Oracle Java 8.</p>
-<p>To build OAP package, run command below then you can find a tarball named <code>oap-$VERSION-bin-spark-$VERSION.tar.gz</code> under directory <code>oap-tools/dev/release-package</code>, which contains all OAP module jars.
+<p>To build OAP package, run command below then you can find a tarball named <code>oap-$VERSION-bin-spark-$VERSION.tar.gz</code> under directory <code>$OAP_TOOLS_HOME/dev/release-package</code>, which contains all OAP module jars.
 Change to <code>root</code> user, run</p>
 <pre><code># cd oap-tools
 # sh dev/compile-oap.sh
