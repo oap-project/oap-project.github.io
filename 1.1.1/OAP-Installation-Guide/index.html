@@ -74,15 +74,13 @@ Follow steps below on <strong><em>every node</em></strong> of your cluster to se
 </ul>
 <h3 id="prerequisites">Prerequisites</h3>
 <ul>
-<li>
-<p><strong>OS Requirements</strong><br />
-We have tested OAP on Fedora 29 and CentOS 7.6 (kernel-4.18.16). We recommend you use <strong>Fedora 29 CentOS 7.6 or above</strong>. Besides, for <a href="https://github.com/memkind/memkind/tree/v1.10.1-rc2">Memkind</a> we recommend you use <strong>kernel above 3.10</strong>.</p>
-</li>
-<li>
-<p><strong>Conda Requirements</strong> <br />
-Install Conda on your cluster nodes with below commands and follow the prompts on the installer screens.:</p>
-</li>
+<li><strong>OS Requirements</strong>  </li>
 </ul>
+<p>We have tested OAP on Fedora 29 and CentOS 7.6 (kernel-4.18.16). We recommend you use <strong>Fedora 29 CentOS 7.6 or above</strong>. Besides, for <a href="https://github.com/memkind/memkind/tree/v1.10.1-rc2">Memkind</a> we recommend you use <strong>kernel above 3.10</strong>.</p>
+<ul>
+<li><strong>Conda Requirements</strong>   </li>
+</ul>
+<p>Install Conda on your cluster nodes with below commands and follow the prompts on the installer screens.:</p>
 <pre><code class="bash">$ wget -c https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
 $ chmod +x Miniconda2-latest-Linux-x86_64.sh 
 $ bash Miniconda2-latest-Linux-x86_64.sh 
@@ -92,9 +90,7 @@ $ bash Miniconda2-latest-Linux-x86_64.sh
 To test your installation,  run the command <code>conda list</code> in your terminal window. A list of installed packages appears if it has been installed correctly.</p>
 <h3 id="installing-oap">Installing OAP</h3>
 <p>Create a Conda environment and install OAP Conda package.</p>
-<pre><code class="bash">$ conda create -n oapenv -y python=3.7
-$ conda activate oapenv
-$ conda install -c conda-forge -c intel -y oap=1.1.1
+<pre><code class="bash">$ conda create -n oapenv -c conda-forge -c intel -y oap=1.1.1
 </code></pre>
 
 <p>Once finished steps above, you have completed OAP dependencies installation and OAP building, and will find built OAP jars under <code>$HOME/miniconda2/envs/oapenv/oap_jars</code></p>

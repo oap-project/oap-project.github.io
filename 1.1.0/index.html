@@ -39,7 +39,6 @@
           ]},
           {title: "How to use OAP?", url: "#how-to-use-oap", children: [
               {title: "Guide", url: "#guide" },
-              {title: "Components", url: "#components" },
           ]},
         ];
 
@@ -122,11 +121,17 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <ul class="wm-toctree">
         <li class="wm-toc-li wm-toc-lev1 "><a href="." class="wm-article-link wm-toc-text">Overview</a>
 </li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="OAP-Installation-Guide/" class="wm-article-link wm-toc-text">OAP Installation Guide</a>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="Components/" class="wm-article-link wm-toc-text">Components</a>
 </li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="OAP-Developer-Guide/" class="wm-article-link wm-toc-text">OAP Developer Guide</a>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="OAP-Installation-Guide/" class="wm-article-link wm-toc-text">Installation Guide</a>
 </li>
-        <li class="wm-toc-li wm-toc-lev1 "><a href="OAP-Release-Cadence/" class="wm-article-link wm-toc-text">OAP Release Cadence</a>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="OAP-Developer-Guide/" class="wm-article-link wm-toc-text">Developer Guide</a>
+</li>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="OAP-Release-Cadence/" class="wm-article-link wm-toc-text">Release Cadence</a>
+</li>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="Presentations/" class="wm-article-link wm-toc-text">Presentations</a>
+</li>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="Powered-by/" class="wm-article-link wm-toc-text">Powered By</a>
 </li>
   </ul>
 </nav>
@@ -155,8 +160,8 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>The batch processing engine cannot satisfy the need of queries with high performance requirement.</p>
 </li>
 </ul>
-<p>OAP Project is targeted to optimize Spark on these aspects above, now it has 8 components, including <strong>SQL DS Cache</strong>,
-<strong>Native SQL Engine</strong>, <strong>Arrow Data Source</strong>, <strong>OAP MLlib</strong>, <strong>PMem Spill</strong>, <strong>PMem Common</strong>, <strong>PMem Shuffle</strong> and <strong>Remote Shuffle</strong>.</p>
+<p>OAP Project is targeted to optimize Spark on these aspects above, now it has 7 components, including <strong>Gazelle Plugin</strong>, <strong>SQL DS Cache</strong>,
+<strong>OAP MLlib</strong>, <strong>PMem Spill</strong>, <strong>PMem Common</strong>, <strong>PMem Shuffle</strong> and <strong>Remote Shuffle</strong>.</p>
 <p><img alt="Overview" src="./image/OAP-Components.png" /></p>
 <h1 id="how-to-use-oap"><font size="6"><b>How to use OAP?</b></font></h1>
 <h2 id="guide">Guide</h2>
@@ -164,17 +169,6 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <ul>
 <li><a href="OAP-Installation-Guide/">OAP Installation Guide</a></li>
 <li><a href="OAP-Developer-Guide/">OAP Developer Guide</a></li>
-</ul>
-<h2 id="components">Components</h2>
-<p>You can get more detailed information from each module web page of OAP Project below.</p>
-<ul>
-<li><a href="https://oap-project.github.io/sql-ds-cache/">SQL DS Cache</a></li>
-<li><a href="https://oap-project.github.io/native-sql-engine/">Native SQL Engine</a></li>
-<li><a href="https://oap-project.github.io/oap-mllib/">OAP MLlib</a></li>
-<li><a href="https://oap-project.github.io/pmem-shuffle/">PMem Shuffle</a></li>
-<li><a href="https://oap-project.github.io/remote-shuffle/">Remote Shuffle</a></li>
-<li><a href="https://oap-project.github.io/pmem-spill/">PMem Spill</a></li>
-<li><a href="https://oap-project.github.io/pmem-common/">PMem Common</a></li>
 </ul>
 
   <br>
@@ -188,5 +182,5 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </html>
 <!--
 MkDocs version : 0.16.3
-Build Date UTC : 2021-04-30 07:10:32
+Build Date UTC : 2021-07-23 00:32:27
 -->
