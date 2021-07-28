@@ -152,7 +152,7 @@
         }, 
         {
             "location": "/Presentations/", 
-            "text": "Talks:\n\n\n\n\nSpark Native SQL Engine, \nApache Spark Chinese Technology Community\n, May 2021\n\n\nBuilding a SIMD Supported Vectorized Native Engine for Spark SQL, \nSpark Data + AI Summit\n, November 2020\n\n\nOAP - SQL Index \n Data Source Cache, \nApache Spark Chinese Technology Community\n, August 2020\n\n\nAccelerate Your Spark Using Intel Optane DC Persistent Memory, \nShanghai Apache Spark + AI Meetup\n, November 2018\n\n\nOAP: Optimized Analytics Package for Spark Platform, \nSpark Summit\n, October 2017\n\n\n\n\nIntel Website:\n\n\n\n\nOptimized Analytics Package for Spark\n Platform (OAP for Spark\n Platform)", 
+            "text": "Talks:\n\n\n\n\nSpark Native SQL Engine, \nSlidesTalk\n, May 2021, (\nslides\n)\n\n\nBuilding a SIMD Supported Vectorized Native Engine for Spark SQL, \nSpark Data + AI Summit\n, November 2020, (\nslides\n)\n\n\nOAP - SQL Index \n Data Source Cache, \nSlidesTalk\n, August 2020, (\nslides\n)\n\n\nAccelerate Your Spark Using Intel Optane DC Persistent Memory, \nSlidesTalk\n, November 2018, (\nslides\n)\n\n\nOAP: Optimized Analytics Package for Spark Platform, \nSpark Summit\n, October 2017, (\nslides\n)\n\n\n\n\nIntel Website:\n \n\n\n\n\nOptimized Analytics Package for Spark\n Platform (OAP for Spark\n Platform)", 
             "title": "Presentations"
         }, 
         {
