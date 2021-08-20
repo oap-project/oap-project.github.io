@@ -157,7 +157,7 @@
         }, 
         {
             "location": "/Powered-by/", 
-            "text": "Alibaba Cloud\n\n\nTIANCHI Competition - E-MapReduce Geek Challenge\n\n\n\n\n\n\nBaidu\n\n\nBaidu BigSQL Delivers Faster Spark Interactive Queries with OAP \n Intel\u00ae Optane\u2122 Persistent Memory\n\n\n\n\n\n\nBONC\n\n\nA Big Data Platform Solution Based on BONC Enterprise Edition Hadoop and Intel\u00ae Optane\u2122 Persistent Memory", 
+            "text": "Alibaba Cloud\n\n\nTIANCHI Competition - E-MapReduce Geek Challenge\n\n\nSpark Performance Optimization Solution based on Intel\u00ae OAP\n\n\n\n\n\n\nBaidu\n\n\nBaidu BigSQL Delivers Faster Spark Interactive Queries with OAP \n Intel\u00ae Optane\u2122 Persistent Memory\n\n\n\n\n\n\nBONC\n\n\nA Big Data Platform Solution Based on BONC Enterprise Edition Hadoop and Intel\u00ae Optane\u2122 Persistent Memory", 
             "title": "Powered By"
         }
     ]
