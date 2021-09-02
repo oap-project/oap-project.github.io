@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Components - OAP</title>
+    <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link href="../extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap-3.3.7.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Gazelle Plugin", url: "#gazelle-plugin", children: [
+          ]},
+          {title: "SQL DS Cache", url: "#sql-ds-cache", children: [
+          ]},
+          {title: "OAP MLlib", url: "#oap-mllib", children: [
+          ]},
+          {title: "PMem Shuffle", url: "#pmem-shuffle", children: [
+          ]},
+          {title: "Remote Shuffle", url: "#remote-shuffle", children: [
+          ]},
+          {title: "PMem Spill", url: "#pmem-spill", children: [
+          ]},
+          {title: "PMem Common", url: "#pmem-common", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="/js/base.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-125166209-1', 'oap-project.github.io');
+        ga('send', 'pageview');
+    </script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+    <h1><strong>Components</strong></h1>
+    <hr>
+    <p>OAP Project is targeted to optimize Spark, now it has 7 components, including <strong>Gazelle Plugin</strong>, <strong>SQL DS Cache</strong>,
+<strong>OAP MLlib</strong>, <strong>PMem Spill</strong>, <strong>PMem Common</strong>, <strong>PMem Shuffle</strong> and <strong>Remote Shuffle</strong>.</p>
+<ul>
+<li><a href="https://oap-project.github.io/gazelle_plugin/">Gazelle Plugin</a></li>
+<li><a href="https://oap-project.github.io/sql-ds-cache/">SQL DS Cache</a></li>
+<li><a href="https://oap-project.github.io/oap-mllib/">OAP MLlib</a></li>
+<li><a href="https://oap-project.github.io/pmem-shuffle/">PMem Shuffle</a></li>
+<li><a href="https://oap-project.github.io/remote-shuffle/">Remote Shuffle</a></li>
+<li><a href="https://oap-project.github.io/pmem-spill/">PMem Spill</a></li>
+<li><a href="https://oap-project.github.io/pmem-common/">PMem Common</a></li>
+</ul>
+<h2 id="gazelle-plugin">Gazelle Plugin</h2>
+<p><a href="https://oap-project.github.io/gazelle_plugin/">Document Website</a></p>
+<p>Spark SQL works very well with structured row-based data. It used WholeStageCodeGen to improve the performance by Java JIT code. However Java JIT is usually not working very well on utilizing latest SIMD instructions, especially under complicated queries. 
+Apache Arrow provided CPU-cache friendly columnar in-memory layout, its SIMD-optimized kernels and LLVM-based SQL engine Gandiva are also very efficient.</p>
+<p>Gazelle Plugin reimplements Spark SQL execution layer with SIMD-friendly columnar data processing based on Apache Arrow, 
+and leverages Arrow's CPU-cache friendly columnar in-memory layout, SIMD-optimized kernels and LLVM-based expression engine to bring better performance to Spark SQL.</p>
+<h2 id="sql-ds-cache">SQL DS Cache</h2>
+<p><a href="https://oap-project.github.io/sql-ds-cache/">Document Website</a></p>
+<p>SQL Index and Data Source Cache is an optimized plug-in package designed to accelerate Spark SQL performance by using index and cache technology at the Spark SQL data source layer. 
+Indexing can improve Spark interactive query performance by as much as an order of magnitude, and caching delivers additional Spark SQL query performance benefits. We support both DRAM and Intel® Optane™ Persistent Memory as cache media.</p>
+<h2 id="oap-mllib">OAP MLlib</h2>
+<p><a href="https://oap-project.github.io/oap-mllib/">Document Website</a></p>
+<p>OAP MLlib is an optimized package to accelerate machine learning algorithms in Spark MLlib. 
+It is compatible with Spark MLlib and leverages open source Intel® oneAPI Data Analytics Library (oneDAL) to provide highly optimized algorithms and get most out of CPU and GPU capabilities. 
+It also take advantage of open source Intel® oneAPI Collective Communications Library (oneCCL) to provide efficient communication patterns in multi-node multi-GPU clusters.</p>
+<h2 id="pmem-shuffle">PMem Shuffle</h2>
+<p><a href="https://oap-project.github.io/pmem-shuffle/">Document Website</a></p>
+<p>PMem Shuffle for Spark (previously Spark-PMoF) depends on multiple native libraries like libfabrics, libcuckoo.</p>
+<h2 id="remote-shuffle">Remote Shuffle</h2>
+<p><a href="https://oap-project.github.io/remote-shuffle/">Document Website</a></p>
+<p>Remote Shuffle is a Spark Shuffle Manager plugin, shuffling data through a remote data store, as opposed to vanilla Spark's local-disks.</p>
+<p>This is an essential part of enabling Spark on disaggregated compute and storage architecture.</p>
+<p>There are two shuffle plugins in this project.</p>
+<p>Shuffle-Hadoop, A remote shuffle plugin based Hadoop filesystem. This plugin can work with any remote filesystems compatible with Hadoop, like HDFS, AWS S3 and DAOS.</p>
+<p>Shuffle-Daos Different from the above general plugin based on Hadoop Filesystem interface, this plugin bases on DAOS Object API. Thanks to DAOS Distribution Key and Attribute Key, we can improve performance by constructing shuffle output like below.</p>
+<h2 id="pmem-spill">PMem Spill</h2>
+<p><a href="https://oap-project.github.io/pmem-spill/">Document Website</a></p>
+<p>Spark supports to cache RDDs in memory and disk. We know that memory is small in size and costly. Disks are much slower, although with large capacity. 
+PMem Spill supports RDD Cache with Intel Optane PMem, adds PMem storage level to the existing RDD cache solutions besides memory and disk.</p>
+<h2 id="pmem-common">PMem Common</h2>
+<p><a href="https://oap-project.github.io/pmem-common/">Document Website</a></p>
+<p>PMem Common package includes native libraries and JNI interface for Intel Optane PMem.</p>
+
+  <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

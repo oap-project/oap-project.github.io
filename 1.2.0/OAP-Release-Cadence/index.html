@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Release Cadence - OAP</title>
+    <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link href="../extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap-3.3.7.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "OAP Versions", url: "#oap-versions", children: [
+          ]},
+          {title: "Release Cadence", url: "#release-cadence", children: [
+              {title: "OAP 1.2 Release Window", url: "#oap-12-release-window" },
+          ]},
+          {title: "Maintenance Releases", url: "#maintenance-releases", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="/js/base.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-125166209-1', 'oap-project.github.io');
+        ga('send', 'pageview');
+    </script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+    <h1><strong>Release Cadence</strong></h1>
+    <hr>
+    <p>Starting with OAP 1.1.0, the OAP project will follow the semantic versioning guidelines with a few deviations. These small differences account for OAP’s nature as a multi-module project.</p>
+<h4 id="oap-versions">OAP Versions</h4>
+<p>Each OAP release will be versioned: [MAJOR].[FEATURE].[MAINTENANCE]</p>
+<h4 id="release-cadence">Release Cadence</h4>
+<p>In general, major feature releases occur about every 4 months. Hence, OAP would generally be released about 4 months after 1.1.0. Maintenance releases happen as needed in between feature releases. Major releases do not happen according to a fixed schedule.</p>
+<h5 id="oap-12-release-window">OAP 1.2 Release Window</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Date</th>
+<th align="left">Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">July       2021</td>
+<td align="left">Code freeze. Release branch cut.</td>
+</tr>
+<tr>
+<td align="left">Mid August 2021</td>
+<td align="left">QA period. Focus on bug fixes, tests, stability and docs. Generally, no new features merged.</td>
+</tr>
+<tr>
+<td align="left">August     2021</td>
+<td align="left">Release candidates (RC), etc. until final release passes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="maintenance-releases">Maintenance Releases</h4>
+<p>Feature release branches will, generally, be maintained with bug fix releases for a period of several months.</p>
+
+  <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
