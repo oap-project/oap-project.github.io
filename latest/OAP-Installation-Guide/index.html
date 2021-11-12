@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Installation Guide - OAP</title>
+    <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link href="../extra.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap-3.3.7.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "OAP Installation Guide", url: "#oap-installation-guide", children: [
+              {title: "Contents", url: "#contents" },
+          ]},
+        ];
+
+    </script>
+    <script src="/js/base.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-125166209-1', 'oap-project.github.io');
+        ga('send', 'pageview');
+    </script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+    
+    <h1><strong>Installation Guide</strong></h1>
+    <hr>
+    <h1 id="oap-installation-guide">OAP Installation Guide</h1>
+<p>This document introduces how to install OAP and its dependencies on your cluster nodes by <strong><em>Conda</em></strong>. 
+Follow steps below on <strong><em>every node</em></strong> of your cluster to set right environment for each machine.</p>
+<h2 id="contents">Contents</h2>
+<ul>
+<li><a href="#prerequisites">Prerequisites</a></li>
+<li><a href="#installing-oap">Installing OAP</a></li>
+<li><a href="#configuration">Configuration</a></li>
+</ul>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>
+<p><strong>OS Requirements</strong><br />
+We have tested OAP on Fedora 29 and CentOS 7.6 (kernel-4.18.16). We recommend you use <strong>Fedora 29 CentOS 7.6 or above</strong>. Besides, for <a href="https://github.com/memkind/memkind/tree/v1.10.1-rc2">Memkind</a> we recommend you use <strong>kernel above 3.10</strong>.</p>
+</li>
+<li>
+<p><strong>Conda Requirements</strong> <br />
+Install Conda on your cluster nodes with below commands and follow the prompts on the installer screens.:</p>
+</li>
+</ul>
+<pre><code class="bash">$ wget -c https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
+$ chmod +x Miniconda2-latest-Linux-x86_64.sh 
+$ bash Miniconda2-latest-Linux-x86_64.sh 
+</code></pre>
+
+<p>For changes to take effect, <strong><em>close and re-open</em></strong> your current shell. 
+To test your installation,  run the command <code>conda list</code> in your terminal window. A list of installed packages appears if it has been installed correctly.</p>
+<h3 id="installing-oap">Installing OAP</h3>
+<p>Create a Conda environment and install OAP Conda package.</p>
+<pre><code class="bash">$ conda create -n oapenv -c conda-forge -c intel -y oap=1.2.0
+</code></pre>
+
+<p>Once finished steps above, you have completed OAP dependencies installation and OAP building, and will find built OAP jars under <code>$HOME/miniconda2/envs/oapenv/oap_jars</code></p>
+<p>Dependencies below are required by OAP and all of them are included in OAP Conda package, they will be automatically installed in your cluster when you Conda install OAP. Ensure you have activated environment which you created in the previous steps.</p>
+<ul>
+<li><a href="https://github.com/oap-project/arrow/tree/v4.0.0-oap-1.2.0">Arrow</a></li>
+<li><a href="http://arrow.apache.org/blog/2017/08/08/plasma-in-memory-object-store/">Plasma</a></li>
+<li><a href="https://github.com/memkind/memkind/tree/v1.10.1">Memkind</a></li>
+<li><a href="https://github.com/pmem/vmemcache.git">Vmemcache</a></li>
+<li><a href="https://anaconda.org/intel/hpnl">HPNL</a></li>
+<li><a href="https://github.com/pmem/pmdk">PMDK</a>  </li>
+<li><a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi.html">OneAPI</a></li>
+</ul>
+<h4 id="extra-steps-for-shuffle-remote-pmem-extension">Extra Steps for Shuffle Remote PMem Extension</h4>
+<p>If you use one of OAP features -- <a href="https://github.com/oap-project/pmem-shuffle">PMem Shuffle</a> with <strong>RDMA</strong>, you need to configure and validate RDMA, please refer to <a href="https://github.com/oap-project/pmem-shuffle#4-configure-and-validate-rdma">PMem Shuffle</a> for the details.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Once finished steps above, make sure libraries installed by Conda can be linked by Spark, please add the following configuration settings to <code>$SPARK_HOME/conf/spark-defaults.conf</code>.</p>
+<pre><code>spark.executorEnv.LD_LIBRARY_PATH   $HOME/miniconda2/envs/oapenv/lib
+spark.executor.extraLibraryPath     $HOME/miniconda2/envs/oapenv/lib
+spark.driver.extraLibraryPath       $HOME/miniconda2/envs/oapenv/lib
+spark.executor.extraClassPath       $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar
+spark.driver.extraClassPath         $HOME/miniconda2/envs/oapenv/oap_jars/$OAP_FEATURE.jar
+</code></pre>
+
+<p>Then you can follow the corresponding feature documents for more details to use them.</p>
+
+  <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
