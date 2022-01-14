@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Components - OAP</title>
+    <title>Presentations - OAP</title>
     <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="/css/base.css" rel="stylesheet">
@@ -33,10 +33,6 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Gazelle Plugin", url: "#gazelle-plugin", children: [
-          ]},
-          {title: "OAP MLlib", url: "#oap-mllib", children: [
-          ]},
         ];
 
     </script>
@@ -61,28 +57,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <div class="container-fluid wm-page-content">
     
-    <h1><strong>Components</strong></h1>
+    <h1><strong>Presentations</strong></h1>
     <hr>
-    <p>OAP Project is targeted to optimize Spark, OAP 1.3.0 contains 2 components, including <strong>Gazelle Plugin</strong> and <strong>OAP MLlib</strong>.</p>
+    <p><strong>Talks:</strong></p>
 <ul>
-<li>
-<p><a href="https://oap-project.github.io/gazelle_plugin/">Gazelle Plugin</a></p>
-</li>
-<li>
-<p><a href="https://oap-project.github.io/oap-mllib/">OAP MLlib</a></p>
-</li>
+<li>Spark Native SQL Engine, <a href="https://www.slidestalk.com/AliSpark/20210526_NativeSQLEngineIntroduction_rev11_forSlidesTalk61179?video">SlidesTalk</a>, May 2021, (<a href="../../../presentations/Native%20SQL%20Engine%20Introduction.pdf">slides</a>)</li>
+<li>Building a SIMD Supported Vectorized Native Engine for Spark SQL, <a href="https://databricks.com/session_eu20/building-a-simd-supported-vectorized-native-engine-for-spark-sql">Spark Data + AI Summit</a>, November 2020, (<a href="../../../presentations/Building%20a%20SIMD%20Supported%20Vectorized%20Native%20Engine%20for%20Spark%20SQL.pdf">slides</a>)</li>
+<li>OAP - SQL Index &amp; Data Source Cache, <a href="https://www.slidestalk.com/AliSpark/OAPHighLevelOverview2020082589854?video">SlidesTalk</a>, August 2020, (<a href="../../../presentations/OAP%20SQL%20Index%20%26%20Data%20Source%20Cache.pdf">slides</a>)</li>
+<li>Accelerate Your Spark Using Intel Optane DC Persistent Memory, <a href="https://www.slidestalk.com/u6/Spark_Accleration_with_Intel_DCPMM">SlidesTalk</a>, November 2018, (<a href="../../../presentations/Accelerate%20Your%20Spark%20Using%20Intel%20Optane%20DC%20Persistent%20Memory.pdf">slides</a>)</li>
+<li>OAP: Optimized Analytics Package for Spark Platform, <a href="https://databricks.com/session/oap-optimized-analytics-package-for-spark-platform">Spark Summit</a>, October 2017, (<a href="../../../presentations/OAP%20Optimized%20Analytics%20Package%20for%20Spark%20Platform.pdf">slides</a>)</li>
 </ul>
-<h2 id="gazelle-plugin">Gazelle Plugin</h2>
-<p><a href="https://oap-project.github.io/gazelle_plugin/">Document Website</a></p>
-<p>Spark SQL works very well with structured row-based data. It used WholeStageCodeGen to improve the performance by Java JIT code. However Java JIT is usually not working very well on utilizing latest SIMD instructions, especially under complicated queries.
-Apache Arrow provided CPU-cache friendly columnar in-memory layout, its SIMD-optimized kernels and LLVM-based SQL engine Gandiva are also very efficient.</p>
-<p>Gazelle Plugin reimplements Spark SQL execution layer with SIMD-friendly columnar data processing based on Apache Arrow,
-and leverages Arrow's CPU-cache friendly columnar in-memory layout, SIMD-optimized kernels and LLVM-based expression engine to bring better performance to Spark SQL.</p>
-<h2 id="oap-mllib">OAP MLlib</h2>
-<p><a href="https://oap-project.github.io/oap-mllib/">Document Website</a></p>
-<p>OAP MLlib is an optimized package to accelerate machine learning algorithms in Spark MLlib.
-It is compatible with Spark MLlib and leverages open source Intel® oneAPI Data Analytics Library (oneDAL) to provide highly optimized algorithms and get most out of CPU and GPU capabilities.
-It also take advantage of open source Intel® oneAPI Collective Communications Library (oneCCL) to provide efficient communication patterns in multi-node multi-GPU clusters.</p>
+<p><strong>Intel Website:</strong> </p>
+<ul>
+<li><a href="https://software.intel.com/content/www/cn/zh/develop/articles/containers/optimized-analytics-package-for-spark-platform.html">Optimized Analytics Package for Spark<em> Platform (OAP for Spark</em> Platform)</a></li>
+</ul>
 
   <br>
 </div>
