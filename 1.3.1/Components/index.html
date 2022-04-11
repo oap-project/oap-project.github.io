@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Release Cadence - OAP</title>
+    <title>Components - OAP</title>
     <link href="/css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="/css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="/css/base.css" rel="stylesheet">
@@ -33,10 +33,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "OAP Release Cadence", url: "#oap-release-cadence", children: [
-              {title: "OAP Versions", url: "#oap-versions" },
-              {title: "Release Cadence", url: "#release-cadence" },
-              {title: "Maintenance Releases", url: "#maintenance-releases" },
+          {title: "Gazelle Plugin", url: "#gazelle-plugin", children: [
+          ]},
+          {title: "OAP MLlib", url: "#oap-mllib", children: [
           ]},
         ];
 
@@ -62,39 +61,28 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
 <div class="container-fluid wm-page-content">
     
-    <h1><strong>Release Cadence</strong></h1>
+    <h1><strong>Components</strong></h1>
     <hr>
-    <h1 id="oap-release-cadence">OAP Release Cadence</h1>
-<p>Starting with OAP 1.1.0, the OAP project will follow the semantic versioning guidelines with a few deviations. These small differences account for OAP’s nature as a multi-module project.</p>
-<h4 id="oap-versions">OAP Versions</h4>
-<p>Each OAP release will be versioned: [MAJOR].[FEATURE].[MAINTENANCE]</p>
-<h4 id="release-cadence">Release Cadence</h4>
-<p>In general, major feature releases occur about every 4 months. Hence, OAP would generally be released about 4 months after 1.1.0. Maintenance releases happen as needed in between feature releases. Major releases do not happen according to a fixed schedule.</p>
-<h5 id="oap-14-release-window">OAP 1.4 Release Window</h5>
-<table>
-<thead>
-<tr>
-<th align="left">Date</th>
-<th align="left">Event</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">March       2022</td>
-<td align="left">Code freeze. Release branch cut.</td>
-</tr>
-<tr>
-<td align="left">Mid April  2022</td>
-<td align="left">QA period. Focus on bug fixes, tests, stability and docs. Generally, no new features merged.</td>
-</tr>
-<tr>
-<td align="left">April     2022</td>
-<td align="left">Release candidates (RC), etc. until final release passes</td>
-</tr>
-</tbody>
-</table>
-<h4 id="maintenance-releases">Maintenance Releases</h4>
-<p>Feature release branches will, generally, be maintained with bug fix releases for a period of several months.</p>
+    <p>OAP Project is targeted to optimize Spark, OAP 1.3.0 contains 2 components, including <strong>Gazelle Plugin</strong> and <strong>OAP MLlib</strong>.</p>
+<ul>
+<li>
+<p><a href="https://oap-project.github.io/gazelle_plugin/">Gazelle Plugin</a></p>
+</li>
+<li>
+<p><a href="https://oap-project.github.io/oap-mllib/">OAP MLlib</a></p>
+</li>
+</ul>
+<h2 id="gazelle-plugin">Gazelle Plugin</h2>
+<p><a href="https://oap-project.github.io/gazelle_plugin/">Document Website</a></p>
+<p>Spark SQL works very well with structured row-based data. It used WholeStageCodeGen to improve the performance by Java JIT code. However Java JIT is usually not working very well on utilizing latest SIMD instructions, especially under complicated queries.
+Apache Arrow provided CPU-cache friendly columnar in-memory layout, its SIMD-optimized kernels and LLVM-based SQL engine Gandiva are also very efficient.</p>
+<p>Gazelle Plugin reimplements Spark SQL execution layer with SIMD-friendly columnar data processing based on Apache Arrow,
+and leverages Arrow's CPU-cache friendly columnar in-memory layout, SIMD-optimized kernels and LLVM-based expression engine to bring better performance to Spark SQL.</p>
+<h2 id="oap-mllib">OAP MLlib</h2>
+<p><a href="https://oap-project.github.io/oap-mllib/">Document Website</a></p>
+<p>OAP MLlib is an optimized package to accelerate machine learning algorithms in Spark MLlib.
+It is compatible with Spark MLlib and leverages open source Intel® oneAPI Data Analytics Library (oneDAL) to provide highly optimized algorithms and get most out of CPU and GPU capabilities.
+It also take advantage of open source Intel® oneAPI Collective Communications Library (oneCCL) to provide efficient communication patterns in multi-node multi-GPU clusters.</p>
 
   <br>
 </div>
