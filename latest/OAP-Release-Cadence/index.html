@@ -33,10 +33,12 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "OAP Release Cadence", url: "#oap-release-cadence", children: [
-              {title: "OAP Versions", url: "#oap-versions" },
-              {title: "Release Cadence", url: "#release-cadence" },
-              {title: "Maintenance Releases", url: "#maintenance-releases" },
+          {title: "OAP Versions", url: "#oap-versions", children: [
+          ]},
+          {title: "Release Cadence", url: "#release-cadence", children: [
+              {title: "OAP 1.4 Release Window", url: "#oap-14-release-window" },
+          ]},
+          {title: "Maintenance Releases", url: "#maintenance-releases", children: [
           ]},
         ];
 
@@ -64,8 +66,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
     <h1><strong>Release Cadence</strong></h1>
     <hr>
-    <h1 id="oap-release-cadence">OAP Release Cadence</h1>
-<p>Starting with OAP 1.1.0, the OAP project will follow the semantic versioning guidelines with a few deviations. These small differences account for OAP’s nature as a multi-module project.</p>
+    <p>Starting with OAP 1.1.0, the OAP project will follow the semantic versioning guidelines with a few deviations. These small differences account for OAP’s nature as a multi-module project.</p>
 <h4 id="oap-versions">OAP Versions</h4>
 <p>Each OAP release will be versioned: [MAJOR].[FEATURE].[MAINTENANCE]</p>
 <h4 id="release-cadence">Release Cadence</h4>
@@ -80,15 +81,15 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </thead>
 <tbody>
 <tr>
-<td align="left">March       2022</td>
+<td align="left">May        2022</td>
 <td align="left">Code freeze. Release branch cut.</td>
 </tr>
 <tr>
-<td align="left">Mid April  2022</td>
+<td align="left">Mid June   2022</td>
 <td align="left">QA period. Focus on bug fixes, tests, stability and docs. Generally, no new features merged.</td>
 </tr>
 <tr>
-<td align="left">April     2022</td>
+<td align="left">July     2022</td>
 <td align="left">Release candidates (RC), etc. until final release passes</td>
 </tr>
 </tbody>
