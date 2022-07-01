@@ -37,6 +37,8 @@
           ]},
           {title: "OAP MLlib", url: "#oap-mllib", children: [
           ]},
+          {title: "CloudTik", url: "#cloudtik", children: [
+          ]},
         ];
 
     </script>
@@ -63,26 +65,49 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
     <h1><strong>Components</strong></h1>
     <hr>
-    <p>OAP Project aims to optimize Spark, and it contains 2 components including <strong>Gazelle Plugin</strong> and <strong>OAP MLlib</strong> from release 1.3.0.</p>
+    <p>OAP Project aims to optimize Spark, and it contains 3 components including <strong>Gazelle Plugin</strong>, <strong>OAP MLlib</strong> and <strong>CloudTik</strong> since release 1.4.0.</p>
 <ul>
 <li>
-<p><a href="https://oap-project.github.io/gazelle_plugin/">Gazelle Plugin</a></p>
+<p><a href="https://github.com/oap-project/gazelle_plugin.git">Gazelle Plugin</a></p>
 </li>
 <li>
-<p><a href="https://oap-project.github.io/oap-mllib/">OAP MLlib</a></p>
+<p><a href="https://github.com/oap-project/oap-mllib.git">OAP MLlib</a></p>
+</li>
+<li>
+<p><a href="https://github.com/oap-project/cloudtik.git">CloudTik</a></p>
 </li>
 </ul>
 <h2 id="gazelle-plugin">Gazelle Plugin</h2>
-<p><a href="https://oap-project.github.io/gazelle_plugin/">Document Website</a></p>
-<p>Spark SQL works very well with structured row-based data. It used WholeStageCodeGen to improve the performance by Java JIT code. However Java JIT is usually not working very well on utilizing latest SIMD instructions, especially under complicated queries.
+<p><a href="https://oap-project.github.io/gazelle_plugin/">Documents Website</a></p>
+<p>Spark SQL works very well with structured row-based data. It used WholeStageCodeGen to improve the performance by Java JIT code. However, Java JIT is usually not working very well on utilizing latest SIMD instructions, especially under complicated queries.
 Apache Arrow provided CPU-cache friendly columnar in-memory layout, its SIMD-optimized kernels and LLVM-based SQL engine Gandiva are also very efficient.</p>
 <p>Gazelle Plugin reimplements Spark SQL execution layer with SIMD-friendly columnar data processing based on Apache Arrow,
 and leverages Arrow's CPU-cache friendly columnar in-memory layout, SIMD-optimized kernels and LLVM-based expression engine to bring better performance to Spark SQL.</p>
 <h2 id="oap-mllib">OAP MLlib</h2>
-<p><a href="https://oap-project.github.io/oap-mllib/">Document Website</a></p>
+<p><a href="https://oap-project.github.io/oap-mllib/">Documents Website</a></p>
 <p>OAP MLlib is an optimized package to accelerate machine learning algorithms in Spark MLlib.
 It is compatible with Spark MLlib and leverages open source Intel® oneAPI Data Analytics Library (oneDAL) to provide highly optimized algorithms and get most out of CPU and GPU capabilities.
-It also take advantage of open source Intel® oneAPI Collective Communications Library (oneCCL) to provide efficient communication patterns in multi-node multi-GPU clusters.</p>
+It also takes advantage of open source Intel® oneAPI Collective Communications Library (oneCCL) to provide efficient communication patterns in multi-node multi-GPU clusters.</p>
+<h2 id="cloudtik">CloudTik</h2>
+<p><a href="https://cloudtik.readthedocs.io/">Documents Website</a></p>
+<p>CloudTik is a cloud scaling platform to scale your distributed analytics and AI cluster on public cloud providers including AWS, Azure, GCP, and so on.</p>
+<ul>
+<li>
+<p>Built upon Cloud compute engines and Cloud storages</p>
+</li>
+<li>
+<p>Support major public Cloud providers (AWS, Azure, GCP, and more to come)</p>
+</li>
+<li>
+<p>Powerful and Optimized: Out of box and optimized runtimes for Analytics and AI</p>
+</li>
+<li>
+<p>Simplified and Unified: Easy to use and unified operating experience on all Cloud providers</p>
+</li>
+<li>
+<p>Open and Flexible: Open architecture and users with full control, fully open-source and user transparent.</p>
+</li>
+</ul>
 
   <br>
 </div>
