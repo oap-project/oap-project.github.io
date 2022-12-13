@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2022-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/Components/</loc>
+     <lastmod>2022-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/OAP-Installation-Guide/</loc>
+     <lastmod>2022-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/OAP-Developer-Guide/</loc>
+     <lastmod>2022-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/OAP-Release-Cadence/</loc>
+     <lastmod>2022-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/Presentations/</loc>
+     <lastmod>2022-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/Powered-by/</loc>
+     <lastmod>2022-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+</urlset>
